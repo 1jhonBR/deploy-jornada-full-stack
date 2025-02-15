@@ -8,19 +8,20 @@ const Song = () => {
   const { id } = useParams();
   // console.log(id);
 
-  const { image, name, duration, artist, audio, index } = songsArray.filter(
+  const { image, name, duration, artist, audio } = songsArray.filter(
     (currentSongObj) => currentSongObj._id === id
   )[0];
-  // console.log(songObj)
-
-  const songsArrayFromArtist = songsArray.filter(
-    (currentSongObj) => currentSongObj.artist === artist
-  );
+  // console.log(songObj);
 
   const artistObj = artistArray.filter(
     (currentArtistObj) => currentArtistObj.name === artist
   )[0];
-  // console.log(artistObj)
+  // console.log(artistObj);
+
+  const songsArrayFromArtist = songsArray.filter(
+    (currentSongObj) => currentSongObj.artist === artist
+  );
+  // console.log(songsArrayFromArtist);
 
   const randomIndex = Math.floor(
     Math.random() * (songsArrayFromArtist.length - 1)
